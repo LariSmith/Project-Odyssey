@@ -19,7 +19,6 @@
     <Folder Include="Data\Context\Maps\" />
     <Folder Include="Data\CrossCuttingConcerns\Loggings\" />
     <Folder Include="Data\CrossCuttingConcerns\Authentications\" />
-    <Folder Include="Domain\Entities\" />
     <Folder Include="Domain\Exceptions\" />
     <Folder Include="Domain\Services\" />
     <Folder Include="Utilities\" />

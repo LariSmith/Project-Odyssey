@@ -7,7 +7,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="JWT" Version="10.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Context\Maps\" />
+    <Folder Include="Data\CrossCuttingConcerns\Loggings\" />
+    <Folder Include="Data\CrossCuttingConcerns\Authentications\" />
+    <Folder Include="Domain\Exceptions\" />
+    <Folder Include="Domain\Services\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Domain\ValuesObjects\" />
+    <Folder Include="Services\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>

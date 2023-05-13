@@ -13,6 +13,7 @@ namespace UserAuthentication.Data.Context
 
         public DbSet<Users> Users { get; set; }
         public DbSet<Roles> Roles { get; set; }
+        public DbSet<Permissions> Permissions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -20,6 +21,7 @@ namespace UserAuthentication.Data.Context
 
             modelBuilder.ApplyConfiguration(new Maps.UsersMap());
             modelBuilder.ApplyConfiguration(new Maps.RolesMap());
+            modelBuilder.ApplyConfiguration(new Maps.PermissionsMap());
         }
 
     }

@@ -12,12 +12,14 @@ namespace UserAuthentication.Data.Context
         }
 
         public DbSet<Users> Users { get; set; }
+        public DbSet<Roles> Roles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new Maps.UsersMap());
+            modelBuilder.ApplyConfiguration(new Maps.RolesMap());
         }
 
     }

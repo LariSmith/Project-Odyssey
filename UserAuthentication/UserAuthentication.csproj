@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Context\Maps\" />
     <Folder Include="Data\CrossCuttingConcerns\Loggings\" />
     <Folder Include="Data\CrossCuttingConcerns\Authentications\" />
     <Folder Include="Domain\Exceptions\" />

@@ -22,7 +22,7 @@
     <Folder Include="Domain\Exceptions\" />
     <Folder Include="Domain\Services\" />
     <Folder Include="Utilities\" />
-    <Folder Include="Repositories\" />
+    <Folder Include="Domain\Repositories\" />
     <Folder Include="Services\" />
     <Folder Include="DTOs\" />
     <Folder Include="Interfaces\" />

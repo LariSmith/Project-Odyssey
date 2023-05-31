@@ -10,8 +10,8 @@ namespace UserAuthentication.Data.Context.Maps
         {
             builder.ToTable("Users");
 
-            builder.HasKey(u => u.UserID);
-            builder.Property(u => u.UserID).HasColumnName("user_id");
+            builder.HasKey(u => u.Id);
+            builder.Property(u => u.Id).HasColumnName("user_id");
 
             builder.Property(u => u.Username)
                    .HasColumnName("username")

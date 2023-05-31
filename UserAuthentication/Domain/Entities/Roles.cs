@@ -1,10 +1,17 @@
-﻿namespace UserAuthentication.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace UserAuthentication.Domain.Entities
 {
     public class Roles
     {
-        public int RoleId { get; set; }
+        [Key]
+        [Required]
+        public int Id { get; set; }
+
+        [Required]
         public string RoleName { get; set; }
 
-        public ICollection<UserRoles> Users { get; set; }
+        // Relationship 
+        public virtual ICollection<UserRoles> Users { get; set; }
     }
 }

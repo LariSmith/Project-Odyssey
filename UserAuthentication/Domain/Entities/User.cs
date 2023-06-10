@@ -20,7 +20,7 @@ namespace UserAuthentication.Domain.Entities
 
         public DateTime UpdateAt { get; private set; }
          
-        private readonly HashSet<UserRoles> _roles = new HashSet<UserRoles>();
+        private readonly HashSet<UserRole> _roles = new HashSet<UserRole>();
 
         public User(Username username, Email email, string passwordHash, string name)
         {
@@ -33,9 +33,22 @@ namespace UserAuthentication.Domain.Entities
             UpdateAt = DateTime.UtcNow;
         }
 
+        private User() { }
+
         public void Add(Role role)
         {
-            var userRoles = new UserRoles(Guid.NewGuid(), role.Id, Id);
+            var user = new User
+            {
+                Id = Id,
+                Username = Username,
+                Email = Email,
+                PasswordHash = PasswordHash,
+                Name = Name,
+                CreateAt = CreateAt,
+                UpdateAt = UpdateAt
+            };
+
+            var userRoles = new UserRole(Guid.NewGuid(), role, user);
             _roles.Add(userRoles);
             role.UserRoles.Add(userRoles);
         }

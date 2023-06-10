@@ -9,12 +9,30 @@ namespace UserAuthentication.Domain.Entities
 
         public string RoleName { get; private set; }
 
-        public ICollection<UserRoles> UserRoles { get; private set; } = new List<UserRoles>();
+        public ICollection<UserRole> UserRoles { get; private set; } = new List<UserRole>();
+
+        private readonly HashSet<RolePermission> _permission = new HashSet<RolePermission>();
 
         public Role(string roleName) 
         {
             Id = Guid.NewGuid();
             RoleName = roleName;
+        }
+
+        private Role() 
+        {}
+        
+        public void Add(Permission permission)
+        {
+            var role = new Role
+            {
+                Id = Id,
+                RoleName = RoleName
+            };
+
+            var rolePermission = new RolePermission(Guid.NewGuid(), role, permission);
+            permission.RolePermissions.Add(rolePermission);
+            _permission.Add(rolePermission);
         }
     }
 }

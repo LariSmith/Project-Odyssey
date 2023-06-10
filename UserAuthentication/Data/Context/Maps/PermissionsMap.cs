@@ -10,14 +10,7 @@ namespace UserAuthentication.Data.Context.Maps
         {
             builder.ToTable("Users");
 
-            builder.HasKey(u => u.PermissionId);
-            builder.Property(u => u.PermissionId).HasColumnName("permission_id");
-
-            builder.Property(u => u.PermissionName)
-                   .HasColumnName("permission_id")
-                   .HasColumnType("varchar(50)")
-                   .HasMaxLength(50)
-                   .IsRequired(true);
+            builder.HasKey(u => u.Id);
         }
     }
 }

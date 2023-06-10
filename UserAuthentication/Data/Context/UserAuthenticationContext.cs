@@ -14,6 +14,7 @@ namespace UserAuthentication.Data.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Permission> Permissions { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
 
@@ -26,6 +27,7 @@ namespace UserAuthentication.Data.Context
             modelBuilder.ApplyConfiguration(new Maps.PermissionsMap());
             modelBuilder.ApplyConfiguration(new Maps.UserRolesMap());
             modelBuilder.ApplyConfiguration(new Maps.RolePermissionsMap());
+            modelBuilder.ApplyConfiguration(new Maps.RefreshTokenMap());
         }
 
     }

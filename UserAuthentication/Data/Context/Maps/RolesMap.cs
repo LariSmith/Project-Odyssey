@@ -4,9 +4,9 @@ using UserAuthentication.Domain.Entities;
 
 namespace UserAuthentication.Data.Context.Maps
 {
-    public class RolesMap : IEntityTypeConfiguration<Roles>
+    public class RolesMap : IEntityTypeConfiguration<Role>
     {
-        public void Configure(EntityTypeBuilder<Roles> builder)
+        public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.ToTable("Users");
 

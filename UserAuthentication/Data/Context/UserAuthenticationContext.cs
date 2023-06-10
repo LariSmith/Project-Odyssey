@@ -11,8 +11,8 @@ namespace UserAuthentication.Data.Context
         {
         }
 
-        public DbSet<Users> Users { get; set; }
-        public DbSet<Roles> Roles { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<Permissions> Permissions { get; set; }
         public DbSet<UserRoles> UserRoles { get; set; }
 

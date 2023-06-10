@@ -4,7 +4,12 @@
     {
         public string Value { get; }
 
-        public Username(string value)
+        private Username(string value)
+        {
+            Value = value;
+        }
+
+        public static Username Create(string value)
         {
             const int MaxUsernameLength = 20;
 
@@ -13,7 +18,7 @@
             if (value.Length > 15)
                 throw new ArgumentException($"Username cannot exceed {MaxUsernameLength} characters.");
 
-            Value = value;
+            return new Username(value);
         }
     }
 }

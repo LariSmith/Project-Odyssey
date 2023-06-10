@@ -3,28 +3,23 @@ using System.Text.RegularExpressions;
 
 namespace UserAuthentication.Domain.ValuesObjects
 {
-    public class Email
+    public record Email
     {
         public string Address { get; }
 
-        public Email(string address)
+        private Email(string address)
         {
-            if (string.IsNullOrEmpty(address))
-                throw new ArgumentException("Email cannot be empty or whitespace.");
-            if (!IsValidFormat(address))
-                throw new ArgumentException("Invalid email format");
-
             Address = address;
         }
 
-        private bool IsValidFormat(string address)
+        public static Email Create (string address)
         {
-            var valid = true;
+            if (string.IsNullOrEmpty(address))
+                throw new ArgumentException("Email cannot be empty or whitespace.");
+            if (!MailAddress.TryCreate(address, out _))
+                throw new ArgumentException("Invalid email");
 
-            try { var emailAddress = new MailAddress(address); }
-            catch { valid = false; }
-
-            return valid;
+            return new Email(address);
         }
         
     }

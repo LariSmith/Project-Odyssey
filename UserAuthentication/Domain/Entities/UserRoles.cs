@@ -6,17 +6,19 @@ namespace UserAuthentication.Domain.Entities
     public class UserRoles
     {
         [Key]
-        [Required]
+        public Guid Id { get; private set; }
+
         [ForeignKey("Users")]
-        public int RoleId { get; set; }
+        public Guid RoleId { get; private set; }
 
-        [Key]
-        [Required]
         [ForeignKey("Roles")]
-        public int UserId { get; set; }
+        public Guid UserId { get; private set; }
 
-        // Relationship 
-        public virtual Roles Role { get; set; }
-        public virtual Users User { get; set; }
+        internal UserRoles(Guid id, Guid roleId, Guid userId)
+        {
+            Id = id;
+            RoleId = roleId;
+            UserId = userId;
+        }
     }
 }

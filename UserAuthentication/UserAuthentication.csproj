@@ -20,15 +20,13 @@
     <Folder Include="Data\CrossCuttingConcerns\Loggings\" />
     <Folder Include="Data\CrossCuttingConcerns\Authentications\" />
     <Folder Include="Domain\Exceptions\" />
-    <Folder Include="Domain\Interfaces\Services\" />
-    <Folder Include="Domain\Interfaces\Repositories\" />
     <Folder Include="Domain\Services\" />
     <Folder Include="Application\" />
+    <Folder Include="Presentation\Controllers\" />
     <Folder Include="Utilities\" />
     <Folder Include="Domain\Repositories\" />
     <Folder Include="Application\Services\" />
     <Folder Include="Presentation\DTOs\" />
-    <Folder Include="Application\Interfaces\" />
   </ItemGroup>
 
 </Project>

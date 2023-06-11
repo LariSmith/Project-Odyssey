@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UserAuthentication.Domain.Entities;
 using UserAuthentication.Domain.ValuesObjects;
 
-namespace UserAuthentication.Data.Context.Maps
+namespace UserAuthentication.Presentation.Maps
 {
     public class UsersMap : IEntityTypeConfiguration<User>
     {

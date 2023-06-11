@@ -21,8 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\CrossCuttingConcerns\Loggings\" />
-    <Folder Include="Data\CrossCuttingConcerns\Authentications\" />
     <Folder Include="Application\" />
     <Folder Include="Presentation\Controllers\" />
     <Folder Include="Utilities\" />

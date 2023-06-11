@@ -2,11 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using UserAuthentication.Domain.Entities;
 
-namespace UserAuthentication.Data.Context.Maps
+namespace UserAuthentication.Presentation.Maps
 {
-    public class PermissionsMap : IEntityTypeConfiguration<Permission>
+    public class RolesMap : IEntityTypeConfiguration<Role>
     {
-        public void Configure(EntityTypeBuilder<Permission> builder)
+        public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.ToTable("Users");
 

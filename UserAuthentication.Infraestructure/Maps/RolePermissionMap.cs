@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using UserAuthentication.Domain.Entities;
 
-namespace UserAuthentication.Data.Context.Maps
+namespace UserAuthentication.Presentation.Maps
 {
     public class RolePermissionsMap : IEntityTypeConfiguration<RolePermission>
     {

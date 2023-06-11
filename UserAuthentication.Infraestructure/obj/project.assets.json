@@ -252,6 +252,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "UserAuthentication.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/UserAuthentication.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UserAuthentication.Domain.dll": {}
+        }
       }
     }
   },
@@ -631,12 +641,18 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "UserAuthentication.Domain/1.0.0": {
+      "type": "project",
+      "path": "../UserAuthentication.Domain/UserAuthentication.Domain.csproj",
+      "msbuildProject": "../UserAuthentication.Domain/UserAuthentication.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 7.0.5",
-      "Microsoft.EntityFrameworkCore.Relational >= 7.0.5"
+      "Microsoft.EntityFrameworkCore.Relational >= 7.0.5",
+      "UserAuthentication.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -671,7 +687,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Lucas\\Documents\\Portfolio\\Project-Odyssey\\UserAuthentication.Domain\\UserAuthentication.Domain.csproj": {
+              "projectPath": "C:\\Users\\Lucas\\Documents\\Portfolio\\Project-Odyssey\\UserAuthentication.Domain\\UserAuthentication.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

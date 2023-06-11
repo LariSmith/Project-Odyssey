@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using UserAuthentication.Data.Context.Maps;
 using UserAuthentication.Domain.Entities;
 
-namespace UserAuthentication.Data.Context
+namespace UserAuthentication.Presentation
 {
     public class UserAuthenticationContext : DbContext
     {

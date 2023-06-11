@@ -10,24 +10,20 @@ namespace UserAuthentication.Domain.Entities
 
         private readonly HashSet<RolePermission> _permission = new HashSet<RolePermission>();
 
-        public Role(string roleName) 
+        private Role(string roleName) 
         {
             Id = Guid.NewGuid();
             RoleName = roleName;
         }
 
-        private Role() 
-        {}
+        public static Role Create(string roleName)
+        {
+            return new Role(roleName);
+        }
         
         public void Add(Permission permission)
         {
-            var role = new Role
-            {
-                Id = Id,
-                RoleName = RoleName
-            };
-
-            var rolePermission = new RolePermission(Guid.NewGuid(), role, permission);
+            var rolePermission = new RolePermission(Guid.NewGuid(), this, permission);
             permission.RolePermissions.Add(rolePermission);
             _permission.Add(rolePermission);
         }

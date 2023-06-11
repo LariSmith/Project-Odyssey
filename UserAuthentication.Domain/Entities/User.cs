@@ -22,7 +22,7 @@ namespace UserAuthentication.Domain.Entities
 
         private RefreshToken? _refreshToken { get; set; }
 
-        public User(Username username, Email email, string passwordHash, string name)
+        private User(Username username, Email email, string passwordHash, string name) 
         {
             Id = Guid.NewGuid();
             Username = username;
@@ -33,41 +33,28 @@ namespace UserAuthentication.Domain.Entities
             UpdateAt = DateTime.UtcNow;
         }
 
-        private User() { }
-
-        public void AddRole(Role role)
+        public static User Create(Username username, Email email, string passwordHash, string name)
         {
-            var user = new User
-            {
-                Id = Id,
-                Username = Username,
-                Email = Email,
-                PasswordHash = PasswordHash,
-                Name = Name,
-                CreateAt = CreateAt,
-                UpdateAt = UpdateAt
-            };
+            return new User(username, email, passwordHash, name);
+        }
 
-            var userRoles = new UserRole(Guid.NewGuid(), role, user);
+        public void Add(Role role)
+        {
+            var userRoles = new UserRole(Guid.NewGuid(), role, this);
             _roles.Add(userRoles);
             role.UserRoles.Add(userRoles);
         }
 
-        public void CreateRefreshToken(string token, DateTime expirationTime)
+        public void Remove(Role role)
         {
-            var user = new User
-            {
-                Id = Id,
-                Username = Username,
-                Email = Email,
-                PasswordHash = PasswordHash,
-                Name = Name,
-                CreateAt = CreateAt,
-                UpdateAt = UpdateAt
-            };
 
-            var refreshToken = new RefreshToken(Guid.NewGuid(), user, token, expirationTime);
+        }
+
+        public RefreshToken GenerateRefreshToken(string token, DateTime expirationTime)
+        {
+            var refreshToken = new RefreshToken(Guid.NewGuid(), this, token, expirationTime);
             _refreshToken = refreshToken;
+            return refreshToken;
         }
 
         public RefreshToken? GetRefreshToken()
@@ -76,6 +63,11 @@ namespace UserAuthentication.Domain.Entities
                 return null;
 
             return _refreshToken;
+        }
+
+        public void CheckRefreshToken()
+        {
+
         }
 
     }

@@ -1,4 +1,5 @@
-﻿using UserAuthentication.Domain.Primitives;
+﻿using UserAuthentication.Domain.Enum;
+using UserAuthentication.Domain.Primitives;
 
 namespace UserAuthentication.Domain.Entities
 {
@@ -13,14 +14,23 @@ namespace UserAuthentication.Domain.Entities
 
         public DateTime CreateAt { get; private set; }
 
+        public TokenStatus Status { get; private set; }
+
         internal RefreshToken(Guid id,User user, string token, DateTime expirationTime) 
-        { 
+        {
             Id = id;
             UserId = user.Id;
             User = user;
             Token = token;
             ExpirationTime = expirationTime;
             CreateAt = DateTime.Now;
+            Status = TokenStatus.Active;
         }
+
+        internal void Expire()
+        {
+            Status = TokenStatus.Expire;
+        }
+
     }
 }

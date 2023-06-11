@@ -7,7 +7,6 @@ namespace UserAuthentication.Domain.Entities
         private Guid RoleId { get; set; }
         public Role Role { get; private set; }
 
-
         private Guid PermissionId { get; set; }
         public Permission Permission { get; private set; }
 

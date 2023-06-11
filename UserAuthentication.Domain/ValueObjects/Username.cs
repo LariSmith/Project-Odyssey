@@ -1,4 +1,6 @@
-﻿namespace UserAuthentication.Domain.ValuesObjects
+﻿using UserAuthentication.Domain.Exceptions;
+
+namespace UserAuthentication.Domain.ValuesObjects
 {
     public class Username
     {
@@ -9,9 +11,9 @@
         public Username(string value)
         {
             if (string.IsNullOrEmpty(value))
-                throw new ArgumentException("Username cannot be empty or whitespace.");
+                throw new UsernameIsNullOrWhitespaceException("Username cannot be empty or whitespace.");
             if (value.Length > 15)
-                throw new ArgumentException($"Username cannot exceed {MaxUsernameLength} characters.");
+                throw new UsernameMaxLengthException($"Username cannot exceed {MaxUsernameLength} characters.");
 
             Value = value;
         }

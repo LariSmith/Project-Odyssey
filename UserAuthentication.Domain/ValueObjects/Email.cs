@@ -1,5 +1,6 @@
 ﻿using System.Net.Mail;
 using System.Text.RegularExpressions;
+using UserAuthentication.Domain.Exceptions;
 
 namespace UserAuthentication.Domain.ValuesObjects
 {
@@ -10,9 +11,9 @@ namespace UserAuthentication.Domain.ValuesObjects
         public Email(string address)
         {
             if (string.IsNullOrEmpty(address))
-                throw new ArgumentException("Email cannot be empty or whitespace.");
+                throw new EmailIsNullOrWhitespaceException("Email cannot be empty or whitespace.");
             if (!MailAddress.TryCreate(address, out _))
-                throw new ArgumentException("Invalid email");
+                throw new EmailIsInvalidException("Invalid email");
 
             Address = address;
         }

@@ -34,7 +34,7 @@ namespace UserAuthentication.Domain.Entities
         }
 
         public static User Create(Username username, Email email, string passwordHash, string name)
-        {
+        {            
             return new User(username, email, passwordHash, name);
         }
 
@@ -43,7 +43,7 @@ namespace UserAuthentication.Domain.Entities
             var userRoles = new UserRole(Guid.NewGuid(), role, this);
             _roles.Add(userRoles);
             role.UserRoles.Add(userRoles);
-        }
+        } 
 
         public void Remove(Role role)
         {

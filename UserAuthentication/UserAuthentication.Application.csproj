@@ -21,11 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\" />
-    <Folder Include="Presentation\Controllers\" />
-    <Folder Include="Utilities\" />
-    <Folder Include="Application\Services\" />
-    <Folder Include="Presentation\DTOs\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

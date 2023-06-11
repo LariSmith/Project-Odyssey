@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Presentation", "UserAuthentication.Presentation.csproj", "{F5302A57-270A-4EEC-9340-E31223A65F9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Application", "UserAuthentication.Application.csproj", "{F5302A57-270A-4EEC-9340-E31223A65F9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Domain", "..\UserAuthentication.Domain\UserAuthentication.Domain.csproj", "{CA2EFD7B-AF4C-4956-A82B-96ED89F1D180}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Domain", "..\UserAuthentication.Domain\UserAuthentication.Domain.csproj", "{CA2EFD7B-AF4C-4956-A82B-96ED89F1D180}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Infraestructure", "..\UserAuthentication.Infraestructure\UserAuthentication.Infraestructure.csproj", "{E35B54AC-B1D0-4487-882E-FD9EB23FFC30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Infraestructure", "..\UserAuthentication.Infraestructure\UserAuthentication.Infraestructure.csproj", "{E35B54AC-B1D0-4487-882E-FD9EB23FFC30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

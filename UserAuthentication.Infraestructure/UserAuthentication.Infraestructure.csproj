@@ -15,4 +15,10 @@
     <ProjectReference Include="..\UserAuthentication.Domain\UserAuthentication.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="NovaPasta\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UserAuthentication.Domain.Entities;
+using UserAuthentication.Domain.ValuesObjects;
 
 namespace UserAuthentication.Data.Context.Maps
 {
@@ -11,6 +12,14 @@ namespace UserAuthentication.Data.Context.Maps
             builder.ToTable("Users");
 
             builder.HasKey(u => u.Id);
+
+            builder.Property(u => u.Email).HasConversion(
+                Email => Email.Address,
+                value => new Email(value));
+
+            builder.Property(u => u.Username).HasConversion(
+                Username => Username.Value,
+                value => new Username(value));
         }
     }
 }

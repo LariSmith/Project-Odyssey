@@ -9,7 +9,7 @@ namespace UserAuthentication.Domain.Entities
 
         public string RoleName { get; private set; }
 
-        public ICollection<UserRole> UserRoles { get; private set; } = new List<UserRole>();
+        public ICollection<UserRole> UserRoles { get; internal set; } = new List<UserRole>();
 
         private readonly HashSet<RolePermission> _permission = new HashSet<RolePermission>();
 
@@ -33,6 +33,11 @@ namespace UserAuthentication.Domain.Entities
             var rolePermission = new RolePermission(Guid.NewGuid(), role, permission);
             permission.RolePermissions.Add(rolePermission);
             _permission.Add(rolePermission);
+        }
+
+        public void Remove(Permission permission)
+        {
+
         }
     }
 }

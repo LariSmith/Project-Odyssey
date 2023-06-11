@@ -23,7 +23,7 @@ namespace UserAuthentication.Domain.Entities
         public IReadOnlyCollection<UserRole> Roles => _roles;
         private readonly HashSet<UserRole> _roles = new HashSet<UserRole>();
 
-        public RefreshToken RefreshToken { get; private set; }
+        private RefreshToken? _refreshToken { get; set; }
 
         public User(Username username, Email email, string passwordHash, string name)
         {
@@ -56,7 +56,7 @@ namespace UserAuthentication.Domain.Entities
             role.UserRoles.Add(userRoles);
         }
 
-        public void AddRefreshToken(string token, DateTime expirationTime)
+        public void CreateRefreshToken(string token, DateTime expirationTime)
         {
             var user = new User
             {
@@ -70,7 +70,15 @@ namespace UserAuthentication.Domain.Entities
             };
 
             var refreshToken = new RefreshToken(Guid.NewGuid(), user, token, expirationTime);
-            RefreshToken = refreshToken;
+            _refreshToken = refreshToken;
+        }
+
+        public RefreshToken? GetRefreshToken()
+        {
+            if (_refreshToken == null)
+                return null;
+
+            return _refreshToken;
         }
 
     }

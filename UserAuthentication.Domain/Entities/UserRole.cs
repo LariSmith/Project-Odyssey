@@ -1,18 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using UserAuthentication.Domain.Primitives;
 
 namespace UserAuthentication.Domain.Entities
 {
-    public class UserRole
+    public class UserRole : BaseEntity
     {
-        [Key]
-        public Guid Id { get; private set; }
-
-        [ForeignKey("User")]
         private Guid RoleId { get; set; }
         public Role Role { get; private set; }
 
-        [ForeignKey("Role")]
+
         private Guid UserId { get; set; }
         public User User { get; private set; }
 

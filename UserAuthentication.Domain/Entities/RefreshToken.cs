@@ -1,14 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using UserAuthentication.Domain.Primitives;
 
 namespace UserAuthentication.Domain.Entities
 {
-    public class RefreshToken
+    public class RefreshToken : BaseEntity
     {
-        [Key]
-        public Guid Id { get; private set; }
-
-        [ForeignKey("User")]
         private Guid UserId { get; set; }
         public User User { get; private set; }
 

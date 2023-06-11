@@ -1,13 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using UserAuthentication.Domain.Primitives;
 using UserAuthentication.Domain.ValuesObjects;
 
 namespace UserAuthentication.Domain.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
-        [Key]
-        public Guid Id { get; private set; }
-
         public Username Username { get; private set; }
 
         public Email Email { get; private set; }

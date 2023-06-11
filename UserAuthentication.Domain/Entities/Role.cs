@@ -1,12 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using UserAuthentication.Domain.Primitives;
 
 namespace UserAuthentication.Domain.Entities
 {
-    public class Role
+    public class Role : BaseEntity
     {
-        [Key]
-        public Guid Id { get; private set; }
-
         public string RoleName { get; private set; }
 
         public ICollection<UserRole> UserRoles { get; internal set; } = new List<UserRole>();

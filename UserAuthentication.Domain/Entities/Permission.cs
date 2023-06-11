@@ -1,12 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using UserAuthentication.Domain.Primitives;
 
 namespace UserAuthentication.Domain.Entities
 {
-    public class Permission
+    public class Permission : BaseEntity
     {
-        [Key]
-        public Guid Id { get; private set; }
-
         public string PermissionName { get; private set; }
 
         public ICollection<RolePermission> RolePermissions { get; internal set; } = new List<RolePermission>();
